@@ -1,13 +1,35 @@
-/**
- * START --- SETUP TAILWINDCSS EDIT
- *
- * `yarn rw setup ui tailwindcss` placed these directives here
- * to inject Tailwind's styles into your CSS.
- * For more information, see: https://tailwindcss.com/docs/installation
- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/**
- * END --- SETUP TAILWINDCSS EDIT
- */
+
+@layer base {
+  html, body {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-zinc-700 text-lg text-zinc-100;
+  }
+
+  footer a {
+    @apply hover:text-yellow-200;
+  }
+}
+
+@layer components {
+  .layout {
+    @apply min-h-screen flex flex-col;
+  }
+  nav.top-bar ul {
+    @apply flex items-center gap-12
+  }
+
+  nav.top-bar ul li button,
+  nav.top-bar ul li a {
+    @apply font-bold inline-block hover:text-yellow-200
+  }
+
+  nav.top-bar ul li a.button {
+    @apply bg-emerald-400 py-2 px-6 text-violet-900 hover:bg-yellow-200
+  }
+}
